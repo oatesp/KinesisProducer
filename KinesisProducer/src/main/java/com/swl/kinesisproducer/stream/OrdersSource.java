@@ -33,11 +33,13 @@ public class OrdersSource {
 			e1.printStackTrace();
 		}
     	
-        Log.info("Event sent: " + eventString);
+       
 		
 		
 			orderOut.ordersOut().send(MessageBuilder.withPayload(eventString).build());
 
+			 Log.info("Event sent: " + eventString);
+			
     }
 	
 	

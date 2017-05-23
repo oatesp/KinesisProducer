@@ -16,12 +16,22 @@ spring:
     stream:
       bindings:
         ordersOut: 
-          destination: orders
+          destination: test_stream
           content-type: application/json
+          contentType: application/json
         ordersIn:
-          destination: orders
-          group: sword-proxy
+          destination: test_stream
           content-type: application/json
+          contentType: application/json
+          
+#cloud:  
+ # aws:  
+ #   credentials:  
+  #    accessKey: AKIAJOGJAPD3KYB33EFQ
+  #    secretKey: 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
+  #  region:  
+  #    static: eu-west-1 
+          
           
           
         #  //the hostname of zookeeper and kafka, defaults are localhost - will be private ip
