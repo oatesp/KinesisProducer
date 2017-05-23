@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.0.RELEASE</version>
+		<version>1.5.2.RELEASE</version>
 	</parent>
 	<dependencyManagement>
 		<dependencies>
@@ -53,12 +53,12 @@
             <version>4.7</version>
         </dependency>
         
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
+		</dependency> -->
 		
-		<dependency>
+<!-- 		<dependency>
 			<groupId>com.swl</groupId>
 			<artifactId>commons-metrics</artifactId>
 			<version>LATEST</version>
@@ -67,7 +67,7 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-hystrix</artifactId>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -86,16 +86,23 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
-		
+
 		<dependency>
         	<groupId>org.springframework.cloud</groupId>
         	<artifactId>spring-cloud-stream</artifactId>
+        	<version>1.2.0.BUILD-SNAPSHOT</version>
    		</dependency>
    		<dependency>
+        	<groupId>org.springframework.cloud</groupId>
+        	<artifactId>spring-cloud-starter-stream-kinesis</artifactId>
+        	<version>1.0-SNAPSHOT</version>
+    	</dependency>
+   		<dependency>
     		<groupId>com.amazonaws</groupId>
-    		<artifactId>amazon-kinesis-producer</artifactId>
-    		<version>0.12.3</version>
+    		<artifactId>aws-java-sdk-core</artifactId>
+    		<version>1.11.129</version>
 		</dependency>
+   		
     	
     	<dependency>
             <groupId>org.projectlombok</groupId>

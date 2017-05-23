@@ -1,0 +1,30 @@
+conf: 
+ name: localtest
+server:
+ port: 64398
+management:
+ port: 8082
+ context-path: /manage
+security:
+ user:
+  name: admin
+  password: 2c76788d-e661-49fd-baba-4b41e7c1dd47
+
+  
+spring:
+  cloud:
+    stream:
+      bindings:
+        ordersOut: 
+          destination: orders
+          content-type: application/json
+        ordersIn:
+          destination: orders
+          group: sword-proxy
+          content-type: application/json
+          
+          
+        #  //the hostname of zookeeper and kafka, defaults are localhost - will be private ip
+       #   //on AWS?
+      #    spring.cloud.stream.kafka.binder.zkNodes=kafka
+#spring.cloud.stream.kafka.binder.brokers=kafka

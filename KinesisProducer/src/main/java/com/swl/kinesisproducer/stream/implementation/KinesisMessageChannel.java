@@ -6,12 +6,12 @@ import java.nio.ByteBuffer;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
 
-import com.amazonaws.services.kinesis.producer.KinesisProducer;
+//import com.amazonaws.services.kinesis.producer.KinesisProducer;
 
 public class KinesisMessageChannel implements MessageChannel {
 
 	
-	KinesisProducer kinesis = new KinesisProducer(); 
+	//KinesisProducer kinesis = new KinesisProducer(); 
 	
 	@Override
 	public boolean send(Message<?> message) {
@@ -26,7 +26,7 @@ public class KinesisMessageChannel implements MessageChannel {
 		}
 		
 	          
-	    kinesis.addUserRecord("myStream", "timestamp", data);
+	    //kinesis.addUserRecord("myStream", "timestamp", data);
 		
 		
 
