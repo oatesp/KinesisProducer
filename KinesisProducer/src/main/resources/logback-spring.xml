@@ -4,14 +4,6 @@
 <springProperty name="app-name" source="spring.application.name"/>
 <springProperty name="profile" source="spring.profiles.active"/>
 
-		<logger name="org.springframework" level="INFO"/>
-		<logger name="org.springframework.security" level="INFO"/>
-		<logger name="org.hibernate" level="INFO"/>
-		<logger name="org.apache" level="INFO"/>
-		<logger name="org.thymeleaf" level="INFO"/>
-		<logger name="com" level="INFO"/>
-		<logger name="net" level="INFO"/>
-		<logger name="com.swl" level="DEBUG"/>
 
 		<appender name="system-file" class="ch.qos.logback.core.rolling.RollingFileAppender">
 			<file>application.log</file>

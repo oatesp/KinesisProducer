@@ -16,24 +16,36 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.2.RELEASE</version>
 	</parent>
+	
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Brixton.SR4</version>
+				<version>Dalston.SR2</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-        	<dependency>
-            	<groupId>org.springframework.cloud</groupId>
-            	<artifactId>spring-cloud-stream-dependencies</artifactId>
-            	<version>1.0.3.RELEASE</version>
-            	<type>pom</type>
-            	<scope>import</scope>
-        	</dependency>
+			 <dependency>
+				<groupId>com.amazonaws</groupId>
+				<artifactId>aws-java-sdk-bom</artifactId>
+				<version>1.11.20</version>
+				<type>pom</type>
+				<scope>import</scope>
+		    </dependency>
 		</dependencies>
 	</dependencyManagement>
+
+<repositories>
+    <repository>
+        <id>spring-snapshots</id>
+        <name>Spring Snapshots</name>
+        <url>https://repo.spring.io/libs-snapshot</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+</repositories>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -42,69 +54,36 @@
 	</properties>
 
 	<dependencies>
+	
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+
+		<dependency>
+	        	<groupId>org.springframework.cloud</groupId>
+	        	<artifactId>spring-cloud-starter-stream-kinesis</artifactId>
+	        	<version>1.0.0.BUILD-SNAPSHOT</version>
+	    	</dependency>
+
+  		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-		
+
 		<dependency>
             <groupId>net.logstash.logback</groupId>
             <artifactId>logstash-logback-encoder</artifactId>
             <version>4.7</version>
         </dependency>
-        
-	<!-- 	<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency> -->
 		
-<!-- 		<dependency>
-			<groupId>com.swl</groupId>
-			<artifactId>commons-metrics</artifactId>
-			<version>LATEST</version>
-		</dependency>
-	
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-hystrix</artifactId>
-		</dependency> -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>javax.inject</groupId>
-			<artifactId>javax.inject</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
-
-		<dependency>
-        	<groupId>org.springframework.cloud</groupId>
-        	<artifactId>spring-cloud-stream</artifactId>
-        	<version>1.2.0.BUILD-SNAPSHOT</version>
-   		</dependency>
-   		<dependency>
-        	<groupId>org.springframework.cloud</groupId>
-        	<artifactId>spring-cloud-starter-stream-kinesis</artifactId>
-        	<version>1.0-SNAPSHOT</version>
-    	</dependency>
-   		<dependency>
-    		<groupId>com.amazonaws</groupId>
-    		<artifactId>aws-java-sdk-core</artifactId>
-    		<version>1.11.129</version>
-		</dependency>
-   		
-    	
-    	<dependency>
+    		<dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
@@ -120,7 +99,19 @@
 	   <dependency>
     		<groupId>com.h2database</groupId>
     		<artifactId>h2</artifactId>
-	   </dependency>
+	   </dependency> 
+	   
+	   <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+	   
+	  
 	</dependencies>
 
 

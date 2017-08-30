@@ -1,5 +1,7 @@
 package com.swl.kinesisproducer.stream;
 
+import java.util.UUID;
+
 import com.swl.kinesisproducer.data.POrder;
 
 import lombok.Data;
@@ -9,6 +11,7 @@ import lombok.ToString;
 @ToString
 public class Event {
 
+    private UUID id;
 	private POrder subject;
 	private String type;
 	private String originator;
