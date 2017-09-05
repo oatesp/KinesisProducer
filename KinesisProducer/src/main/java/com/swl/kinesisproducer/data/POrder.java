@@ -12,24 +12,22 @@ import lombok.ToString;
 public class POrder {
 
 	@Id
-	 private UUID id;
-	 
-	 private String name;
-	 
-	 public POrder() {
-		 id = UUID.randomUUID();
-	 }
-	 
+	private UUID id;
 
-		public UUID getId() {
-			return id;
-		}
+	private String name;
 
-		public void setId(UUID id) {
-			this.id = id;
-		}
-	 
-				
+	public POrder() {
+		id = UUID.randomUUID();
+	}
+
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -37,8 +35,5 @@ public class POrder {
 	public void setName(String item) {
 		this.name = item;
 	}
-	
-	 
-	 
-	 
+
 }

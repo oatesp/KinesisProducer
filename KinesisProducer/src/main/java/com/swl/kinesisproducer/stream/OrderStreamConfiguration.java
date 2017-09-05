@@ -19,11 +19,9 @@ public class OrderStreamConfiguration {
 	  public void processOrder(Event event) {
 
 		  //log the order received
-		  if (!event.getOriginator().equals("Sword")) { 
+		  if (!event.getOriginator().equals("KinesisProducer")) { 
 			  log.info("An order has been received " + event.toString());
 			  
-			  
-			  //save the order to the db
 			  orders.save(event.getSubject());
 		  } else {
 			  log.info("An order has been placed from this service " + event.toString());

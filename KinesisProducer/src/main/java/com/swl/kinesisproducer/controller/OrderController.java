@@ -39,11 +39,9 @@ public class OrderController {
 			orders.save(input);
 			
 			//place order on queue
-			orderSource.sendOrder(new Event(input, "ORDER", "Sword"));
+			orderSource.sendOrder(new Event(input, "ORDER", "KinesisProducer"));
 						
 			return new ResponseEntity<POrder>(input, HttpStatus.OK);
 		}
-	    
-	    
-	
+
 }

@@ -25,7 +25,5 @@ public class Event {
 		this.type = type;
 		this.originator = originator;
 	}
-	
-	
-	
+
 }
